@@ -1,0 +1,50 @@
+{% extends 'mainview/base.html' %}
+{% block title %}پروژه‌ها{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">لیست پروژه‌ها</h2>
+
+    <div class="row g-4">
+        {% for post in posts %}
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    {% if post.image %}
+                        <div class="d-flex justify-content-center mt-3">
+                            <img src="{{ post.image.url }}" 
+                                 alt="{{ post.title }}" 
+                                 class="shadow rounded" 
+                                 style="width:120px; height:120px; object-fit:cover;">
+                        </div>
+                    {% endif %}
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.description|truncatechars:100 }}</p>
+
+                        <div class="d-flex flex-column gap-2">
+                            {% if post.attachment %}
+                                <a href="{{ post.attachment.url }}" class="btn btn-sm btn-success">دانلود نمونه کار</a>
+                            {% else %}
+                                <span class="text-muted small">فایلی موجود نیست</span>
+                            {% endif %}
+
+                            <a href="{% url 'post_detail' post.pk %}" class="btn btn-sm btn-primary">جزئیات پروژه</a>
+
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'post_detail' post.pk %}#comments" class="btn btn-sm btn-outline-secondary">افزودن نظر</a>
+                            {% else %}
+                                <span class="text-muted small">برای نظر دادن وارد شوید</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted text-center">
+                        تاریخ انتشار: {{ post.created_at|date:"Y/m/d" }}
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="text-center">فعلاً پروژه‌ای وجود ندارد.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

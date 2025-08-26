@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+    height: 90vh;
+    border: 1px solid #2c2c2c;
+}
+
+.shape {
+    width: 400px;
+    height: 90vh;
+    background-color: #2c2c2c;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    position: absolute;
+    right: 10%;
+}
+
+.circle {
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    clip-path: circle(50% at 50% 50%);
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    background-image: url("/static/mainview/images/profile.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.texts {
+    position: absolute;
+    width: 30%;
+    left: 5%;
+    top: 20%;
+    
+}
+
+.header-title {
+    font-size: 44px;
+}
+
+.text {
+    direction: rtl;      
+    text-align: right;
+    font-size: 48px;
+    color: rgb(179, 4, 4);
+}
+
+.sub-title {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Exo 2', sans-serif;
+    margin-top: 10px;
+    font-size: 20px;
+    color: rgb(107, 107, 107);
+}
+
+.media {
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.fa {
+    margin-right: 15px;
+    cursor: pointer;
+    color: rgb(179, 4, 4);
+}
+
+@media (max-width: 600px) {
+    .header {
+        height: auto; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .shape {
+        display: none; 
+    }
+
+    .circle {
+        position: static; 
+        width: 250px;
+        height: 250px;
+        margin-bottom: 20px;
+    }
+
+    .texts {
+        position: static; 
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-title {
+        font-size: 28px;
+    }
+
+    .text {
+        font-size: 32px;
+    }
+
+    .sub-title {
+        font-size: 16px;
+    }
+}
+

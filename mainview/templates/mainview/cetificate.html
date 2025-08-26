@@ -1,0 +1,48 @@
+{% extends 'mainview/base.html' %}
+{% load static %}
+
+{% block title %}مدارک{% endblock %}
+
+{% block content %}
+<div class="container py-5" style="direction: rtl; text-align: right;">
+    <h2 class="text-center mb-5">مدارک من</h2>
+
+    {% if certificates %}
+    
+    <div id="certificateCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+            {% for cert in certificates %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{ cert.image.url }}" class="d-block w-100 rounded shadow" alt="{{ cert.title }}">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                    <h5>{{ cert.title }}</h5>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#certificateCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">قبلی</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#certificateCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">بعدی</span>
+        </button>
+
+        
+        <div class="carousel-indicators mt-3">
+            {% for cert in certificates %}
+            <button type="button" data-bs-target="#certificateCarousel" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="{% if forloop.first %}true{% endif %}" aria-label="{{ cert.title }}"></button>
+            {% endfor %}
+        </div>
+
+    </div>
+    {% else %}
+    <p class="text-center">هیچ مدرکی ثبت نشده است.</p>
+    {% endif %}
+
+</div>
+{% endblock %}

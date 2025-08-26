@@ -1,0 +1,49 @@
+{% extends 'mainview/base.html' %}
+
+{% block title %} ورود{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center" style="margin-top: 5vh; margin-bottom: 5vh;">
+    <div class="card shadow-sm" style="max-width: 400px; width: 100%;">
+        <div class="mt-6 card-body">
+            <h5 class="card-title text-center mb-4">ورود به سامانه</h5>
+
+            <form method="post" action="{% url 'login' %}" class="text-end">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">نام کاربری</label>
+                    <input type="text" class="form-control text-end" id="username" name="username" required
+                           value="{{ form.username.value|default_if_none:'' }}">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">کلمه عبور</label>
+                    <input type="password" class="form-control text-end" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-dark w-100">ورود</button>
+
+                {% if show_error %}
+                <div class="alert alert-danger mt-2">
+                    نام کاربری یا رمز عبور اشتباه است.
+                </div>
+                {% endif %}
+
+
+            </form>
+
+            <div class="text-center mt-3">
+                <a href="{% url 'password_reset' %}" style="color: #2c2c2c; text-decoration: none; font-weight: bold;">
+                    رمز عبور خود را فراموش کرده‌اید؟
+                </a>
+            </div>
+
+            <div class="text-center mt-2">
+                <span>حساب کاربری ندارید؟ </span>
+                <a href="{% url 'signup' %}" class="fw-bold" style="color: #0d6efd; text-decoration: none;">
+                    ثبت‌نام کنید
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

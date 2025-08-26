@@ -1,0 +1,41 @@
+{% extends 'mainview/base.html' %}
+
+{% block title %} ثبت نام{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center" style="margin-top: 5vh; margin-bottom: 5vh;">
+    <div class="card shadow-sm" style="max-width: 400px; width: 100%;">
+        <div class="mt-6 card-body">
+            <h5 class="card-title text-center mb-4">ایجاد حساب کاربری</h5>
+
+            <form method="post" class="text-end">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="id_username" class="form-label">نام کاربری</label>
+                    <input type="text" name="username" id="id_username" class="form-control text-end" required>
+                </div>
+                <div class="mb-3">
+                    <label for="id_email" class="form-label">ایمیل</label>
+                    <input type="email" name="email" id="id_email" class="form-control text-end" required>
+                </div>
+                <div class="mb-3">
+                    <label for="id_password1" class="form-label">کلمه عبور</label>
+                    <input type="password" name="password1" id="id_password1" class="form-control text-end" required>
+                </div>
+                <div class="mb-3">
+                    <label for="id_password2" class="form-label">تکرار کلمه عبور</label>
+                    <input type="password" name="password2" id="id_password2" class="form-control text-end" required>
+                </div>
+                <button type="submit" class="btn btn-dark w-100">ثبت نام</button>
+            </form>
+
+            <div class="text-center mt-3">
+                <span>قبلاً حساب کاربری دارید؟ </span>
+                <a href="{% url 'login' %}" class="fw-bold" style="color: #0d6efd; text-decoration: none;">
+                    وارد شوید
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

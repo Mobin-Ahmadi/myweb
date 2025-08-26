@@ -1,0 +1,66 @@
+{% extends 'mainview/base.html' %}
+{% load static %}
+{% block title %}
+درباره من
+{% endblock %}
+
+{% block content %}
+<div class="container py-5" style="direction: rtl; text-align: right;">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+                        <img src="{% static 'mainview/images/about.jpg' %}" 
+                             alt="عکس پروفایل" 
+                             class="rounded-circle mb-3 shadow" 
+                             width="150" height="150">
+
+                        <h2 class="fw-bold mb-3">سلام! من مبین احمدی هستم</h2>
+                    </div>
+
+                    <p class="text-muted fs-5">
+                       علاقه‌مند به مهندسی و ترکیب خلاقیت با تکنولوژی. <br>
+تجربه کار با نرم‌افزارهای <strong>Solidworks</strong> و <strong>مجموعه Aspen </strong> دارم و در زمینه‌ی برنامه‌نویسی <strong>پایتون</strong>  هم فعالیت می‌کنم.
+علاوه بر کارهای فنی، به نوشتن مقالات علمی و آموزشی علاقه‌مندم تا بتونم دانشم رو به اشتراک بذارم...
+                    </p>
+
+                    <hr class="my-4">
+
+                    <h5 class="fw-bold"> اهداف من</h5>
+                    <p>
+                        ساخت پروژه‌هایی که هم کاربردی باشن و هم خلاقیت توشون دیده بشه.  
+                        این سایت رو ساختم تا تجربه‌هام رو به اشتراک بذارم، آموزش بذارم 
+                        و با شما ارتباط بگیرم !
+                    </p>
+                    
+                    <hr class="my-4">
+
+                        <h5 class="fw-bold"> تحصیلات</h5>
+                        <p>
+                        دانشجوی رشته <strong>مهندسی شیمی</strong> در دانشگاه <strong>صنعتی شاهرود</strong>.  
+                        در طول تحصیل روی <strong>طراحی فرآیند</strong>، <strong>سینتیک واکنش‌ها</strong> و نرم‌افزارهای شبیه‌سازی صنعتی کار کردم.
+                        </p>
+
+                        <h5 class="fw-bold mt-4"> تجربه‌ها و پروژه‌ها</h5>
+                        <ul>
+                            <li>کار با نرم‌افزار <strong>Solidworks</strong>  و <strong>پرینتر سه بعدی</strong>  برای طراحی و شبیه‌سازی مکانیکی.</li>
+                            <li>شبیه‌سازی فرآیندهای صنعتی با <strong>Aspen HYSYS</strong> و تحلیل داده‌ها.</li>
+                            <li>توسعه پروژه‌های برنامه‌نویسی با <strong>Python</strong> برای حل مسائل مهندسی،تحلیل داده،طراحی اپلیکیشن و سایت.</li>
+                            <li>نوشتن مقالات علمی و آموزشی در زمینه طراحی فرآیند و شبیه‌سازی.</li>
+                        </ul>
+
+
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+                        <a href="{% url 'contactme' %}" 
+                           class="btn btn-outline-danger rounded-pill px-4">
+                           ارتباط با من!؟
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

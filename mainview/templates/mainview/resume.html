@@ -1,0 +1,153 @@
+{% extends 'mainview/base.html' %}
+{% load static %}
+
+{% block title %}رزومه{% endblock %}
+
+{% block content %}
+<div class="container py-5" style="direction: rtl; text-align: right;">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-5">
+
+                    <!-- پروفایل -->
+                    <div class="text-center mb-4">
+                        <img src="{% static 'mainview/images/resume_profile.jpg' %}" 
+                             alt="عکس پروفایل" 
+                             class="rounded-circle mb-3 shadow" 
+                             width="150" height="150">
+                        <h2 class="fw-bold mb-1">مبین احمدی</h2>
+                        <p class="text-muted fs-5">مهندس شیمی | طراح فرآیند | برنامه‌نویس پایتون</p>
+                    </div>
+
+                    <!-- اطلاعات تماس -->
+                    <div class="text-center mb-4 d-flex justify-content-center gap-3 flex-wrap">
+                        <span class="d-inline-flex align-items-center gap-1">
+                            <i class="bi bi-envelope-fill"></i> mobin.ahmadi.chem@gmail.com
+                        </span>
+                        <span class="d-inline-flex align-items-center gap-1">
+                            <i class="bi bi-telephone-fill"></i> 09961599476
+                        </span>
+                    </div>
+
+                    <hr>
+
+                    <!-- درباره من -->
+                    <h5 class="fw-bold">درباره من</h5>
+                    <p class="text-muted fs-6">
+                        مهندس شیمی با تمرکز روی طراحی فرآیند و شبیه‌سازی صنعتی، علاقه‌مند به توسعه پروژه‌های کاربردی و اشتراک دانش.  
+                        تجربه کار با نرم‌افزارهای <strong>Python</strong>، <strong>SolidWorks</strong>، <strong>Aspen HYSYS</strong> و مهارت کار با پرینتر سه بعدی.  
+                        هدفم مشارکت در پروژه‌های صنعتی و توسعه مهارت‌های فنی و علمی است.
+                    </p>
+
+                    <hr>
+
+                    
+                    <h5 class="fw-bold">مهارت‌ها</h5>
+                    <div class="mb-3">
+                        <label class="form-label">Python</label>
+                        <div class="progress mb-2" style="height: 20px; border-radius: 10px;">
+                            <div class="progress-bar" style="width: 90%; background: linear-gradient(90deg, #28a745, #218838); border-radius: 10px;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                        </div>
+
+                        <label class="form-label">Aspen HYSYS</label>
+                        <div class="progress mb-2" style="height: 20px; border-radius: 10px;">
+                            <div class="progress-bar" style="width: 60%; background: linear-gradient(90deg, #e86004, #e8590c); border-radius: 10px;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">60%</div>
+                        </div>
+
+                        <label class="form-label">SolidWorks</label>
+                        <div class="progress mb-2" style="height: 20px; border-radius: 10px;">
+                            <div class="progress-bar" style="width: 70%; background: linear-gradient(90deg, #ffc71f, #af8300); border-radius: 10px;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">70%</div>
+                        </div>
+
+                        <label class="form-label">AutoCAD</label>
+                        <div class="progress mb-2" style="height: 20px; border-radius: 10px;">
+                            <div class="progress-bar" style="width: 30%; background: linear-gradient(90deg, #dc3545, #b02a37); border-radius: 10px;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">30%</div>
+                        </div>
+
+                        <label class="form-label">Office (ICDL)</label>
+                        <div class="progress mb-2" style="height: 20px; border-radius: 10px;">
+                            <div class="progress-bar" style="width: 85%; background: linear-gradient(90deg, #05fbff, #1224e9); border-radius: 10px;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    
+                    <h5 class="fw-bold">تحصیلات</h5>
+                    <ul>
+                        <li>دانشگاه صنعتی شاهرود (1401 تا کنون)</li>
+                    </ul>
+
+                    <hr>
+
+                    
+                    <h5 class="fw-bold">عضویت‌ها</h5>
+                    <ul>
+                        <li>عضو انجمن علمی دانشگاه صنعتی شاهرود</li>
+                        <li>عضو نشریه دانشگاه صنعتی شاهرود</li>
+                        <li>عضو انجمن مهندسی شیمی ایران</li>
+                    </ul>
+
+                    <hr>
+
+                    
+                    <h5 class="fw-bold">زبان‌ها</h5>
+                    <div class="mb-3">
+                        <label class="form-label">انگلیسی</label>
+                        <div class="progress mb-2" style="height: 20px; border-radius: 10px;">
+                            <div class="progress-bar" style="width: 90%; background: linear-gradient(90deg, #28a745, #218838); border-radius: 10px;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                        </div>
+
+                        <label class="form-label">آلمانی</label>
+                        <div class="progress mb-2" style="height: 20px; border-radius: 10px;">
+                            <div class="progress-bar" style="width: 30%; background: linear-gradient(90deg, #dc3545, #b02a37); border-radius: 10px;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    
+                    <h5 class="fw-bold">مدارک</h5>
+                    <p>
+                        <a href="{% url 'certificates' %}" class="btn btn-sm btn-outline-primary">مشاهده مدارک</a>
+                    </p>
+
+                    <hr>
+
+                    
+                    <h5 class="fw-bold">پروژه‌ها</h5>
+                    <p>
+                        <a href="{% url 'projects' %}" class="btn btn-sm btn-outline-success">مشاهده پروژه‌ها</a>
+                    </p>
+
+                    <hr>
+
+                    
+                    <h5 class="fw-bold">تجربه شغلی</h5>
+                    <ul>
+                        <li>تدریس به عنوان استادیار (TA) - دکتر شکوفه دولتی</li>
+                        <li>تدریس به عنوان استادیار (TA) - دکتر غلامی</li>
+                        <li>کار با پرینتر سه بعدی در کارخانه تیسا نخ نوین</li>
+                    </ul>
+
+                    <hr>
+
+                    
+                    <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+                        <a href="#" 
+                           class="btn btn-outline-success rounded-pill px-4" target="_blank">
+                           دانلود رزومه PDF
+                        </a>
+                        <a href="{% url 'contactme' %}" 
+                           class="btn btn-outline-danger rounded-pill px-4">
+                           تماس با من
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
