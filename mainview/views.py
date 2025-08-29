@@ -4,6 +4,7 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 
 def base_view(request):
     posts = Post.objects.all().order_by('-created_at')
@@ -13,7 +14,12 @@ def base_view(request):
         posts = posts.filter(title__icontains=search)
     if category:
         posts = posts.filter(category=category)
-    return render(request,'mainview/base.html',{'posts':posts})
+
+    paginator = Paginator(posts, 5)  
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request,'mainview/base.html',{'page_obj': page_obj})
 
 def about_view(request):
     return render(request,'mainview/about.html')

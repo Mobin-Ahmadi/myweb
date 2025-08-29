@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / compiled files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+
+# Virtual environment
+venv/
+env/
+.venv/
+/venv
+
+# Media files
+media/
+
+# Static files (collected by collectstatic)
+static/
+
+# Environment variables
+.env
+.flaskenv
+
+# Editor/IDE specific files
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# Test and coverage
+.coverage
+htmlcov/
+
+# Python build artifacts
+build/
+dist/
+*.egg

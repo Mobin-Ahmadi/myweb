@@ -1,0 +1,12 @@
+{% extends 'mainview/base.html' %}
+
+{% block title %}خطای سرور{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1 style="font-size: 4rem; color: #dc3545;">500</h1>
+    <h3>متأسفیم، خطای سرور رخ داده است!</h3>
+    <p>لطفاً کمی بعد دوباره تلاش کنید یا با پشتیبانی تماس بگیرید.</p>
+    <a href="{% url 'base' %}" class="btn btn-primary mt-3">بازگشت به صفحه اصلی</a>
+</div>
+{% endblock %}
