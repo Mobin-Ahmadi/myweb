@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# نصب پکیج‌ها
-poetry install
+# نصب تمام پکیج‌ها طبق pyproject.toml
+poetry install --no-interaction --no-ansi
 
-# اجرای مهاجرت‌ها
-python manage.py migrate
+# اجرای مهاجرت‌ها داخل محیط Poetry
+poetry run python manage.py migrate
 
 # جمع‌آوری فایل‌های استاتیک (اگه Django هست)
-python manage.py collectstatic --noinput
+poetry run python manage.py collectstatic --noinput
