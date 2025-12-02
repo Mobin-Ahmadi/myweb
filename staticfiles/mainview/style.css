@@ -1,0 +1,28 @@
+form#commentForm button#button_send {
+    transition: background-color 0.3s ease;
+    border: 1px solid #787878;
+    border-radius: 8px; 
+}
+
+form#commentForm button#button_send:hover {
+    background-color: rgb(228, 110, 32) !important;
+}
+
+
+#commentForm textarea {
+    border-radius: 8px; 
+    padding: 10px;
+}
+
+#commentList li {
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa; 
+}
+
+
+
+.list_footer:hover {
+    color: rgb(219, 208, 46) !important;
+}
