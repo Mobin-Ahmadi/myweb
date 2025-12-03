@@ -8,4 +8,4 @@ pip install -r requirements.txt
 python manage.py migrate
 
 # جمع‌آوری فایل‌های استاتیک
-python manage.py collectstatic --noinput
+python manage.py collectstatic --no-input
