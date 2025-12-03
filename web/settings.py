@@ -14,7 +14,9 @@ SECRET_KEY = 'django-insecure-^@6n&=+11k9(dpe^stid#qgu32j4gs(s%wd@a^!c2q_m5_%!l4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['MobinAhmadi.pythonanywhere.com']
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",") if os.environ.get("ALLOWED_HOSTS") else ["localhost"]
+SECRET_KEY = os.environ.get("SECRET_KEY", "unsafe-local-dev-key")
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 
 # Application definition
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -144,3 +147,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'mobin.ahmadi.majid@gmail.com'
 EMAIL_HOST_PASSWORD = 'amgw esca xbik esld'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
